@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+.app-title {
+	background-color: #333;
+	border-radius: 3px;
+	position: fixed;
+	width: 97%;
+	font-family: 'Lato', sans-serif;
+	padding: 10px;
+	color: white;
+}
+
+.header {
+	font-size: 40px;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 20px;
+	border-bottom: 1px #333 solid;
+}
+
+.sign-in-section {
+	position: relative;
+	border: 1px #333 solid;
+	border-radius: 10px;
+	box-shadow: 1px 1px 1px;
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 300px;
+	padding: 20px;
+	width: 400px;
+	top: 200px;
+	left: 500px;
+	margin-bottom: 20px;
+}
+
+.login-facebook-link {
+	margin-left: 60px;
+	background-color: #729fcf;
+	width: 260px;
+	border-radius: 10px;
+	text-align: right;
+	padding: 5px;
+}
+
+.link-text {
+	position: absolute;
+	left: 120px;
+	font-size: 17px;
+}
+
+.form {
+	margin: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+.icon {
+	position: relative;
+	height: 40px;
+	width: 40px;
+}
+
+.btn-sign-in {
+	position: relative;
+	 left : 170px;
+	padding: 10px;
+	background-color: #73d216;
+	border: 1px #73d216 solid;
+	color: white;
+	border-radius: 5px;
+	cursor: pointer;
+}

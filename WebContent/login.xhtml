@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui" xmlns:app="http://application-tags">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Latest compiled and minified CSS -->
+
+
+	<h:outputStylesheet name="style.css" library="css" />
+	<!-- The library that be allow the sounds to the application -->
+	<title>JSF + Facebook</title>
+
+
+</h:head>
+<h:body>
+
+	<f:view>
+		<ui:param name="originalURL"
+			value="#{request.requestURI}?#{request.queryString}" />
+
+		<f:metadata>
+			<f:event type="preRenderView"
+				listener="#{loginBean.setOriginalURL(originalURL)}" />
+		</f:metadata>
+	</f:view>
+
+
+	<!-- Title -->
+	<nav class="app-title">
+	<h2>JSF+Facebook</h2>
+	</nav>
+
+
+
+
+	<section class="sign-in-section">
+	<div class="header">Sign In</div>
+	<h:form>
+		<div id="socialButtons">
+			<h:commandLink id="facebook"
+				action="#{loginBean.socialConnect}">
+				<div class="login-facebook-link">
+					<p class="link-text">Sign In with Facebook</p>
+					<h:graphicImage class="icon" library="images" name="facebook.svg" />
+				</div>
+				<f:setPropertyActionListener target="#{loginBean.providerID}"
+					value="facebook" />
+			</h:commandLink>
+		</div>
+		<section class="form"> <h:panelGrid columns="2">
+			<h:outputLabel value="Email:" />
+			<h:inputText />
+			<h:outputLabel value="Password:" />
+			<h:inputText />
+
+		</h:panelGrid></section>
+		<h:commandButton class="btn-sign-in" value="Sign In" />
+	</h:form> </section>
+</h:body>
+</html>

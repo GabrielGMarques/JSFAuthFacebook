@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<!-- The library that be allow the sounds to the application -->
+	<title>JSF + Facebook</title>
+
+
+</h:head>
+<h:body>
+
+
+	<f:event listener="#{loginBean.fillUser}" type="preRenderView"></f:event>
+
+
+
+	<!-- Title -->
+	<nav class="app-title">
+	<h2>JSF+Facebook</h2>
+	</nav>
+
+
+
+
+	<section class="sign-in-section">
+	<div class="header">Welcome, #{loginBean.user.name}!</div>
+	<h:form>
+
+		<center>
+			<img src="#{loginBean.user.profileImageUrl}" />
+		</center>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Name:" />
+			<h:outputLabel value="#{loginBean.user.name}" />
+			<h:outputLabel value="Email:" />
+			<h:outputLabel value="#{loginBean.user.email}" />
+			<h:outputLabel value="Age:" />
+			<h:outputLabel value="#{loginBean.user.age}" />
+			<h:outputLabel value="Gender:" />
+			<h:outputLabel value="#{loginBean.user.gender}" />
+			<h:outputLabel value="Birth Date:" />
+			<h:outputLabel value="#{loginBean.user.birthdayAsString}" />
+			<h:outputLabel value="Locale:" />
+			<h:outputLabel value="#{loginBean.user.localeName}" />
+			<h:outputLabel value="Location:" />
+			<h:outputLabel value="#{loginBean.user.location}" />
+		</h:panelGrid>
+		<center>
+			<h3>Schools</h3>
+		</center>
+		<ui:repeat var="i" value="#{loginBean.user.instiutes}">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Name:" />
+				<h:outputLabel value="#{i.name}" />
+				<h:outputLabel value="Final Year Of Course:" />
+				<h:outputLabel value="#{i.finalYearOfCourse}" />
+			</h:panelGrid>
+		</ui:repeat>
+	</h:form> </section>
+
+
+
+
+
+
+
+
+
+
+
+</h:body>
+</html>
