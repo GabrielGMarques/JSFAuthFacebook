@@ -26,19 +26,19 @@ public class LoginBean implements Serializable {
 	private String providerID;
 	private User user;
 	// O id do seu app
-	public static final String FACEBOOK_APP_ID = "******";
+	public static final String FACEBOOK_APP_ID = "********";
 	// A senha do seu app
-	public static final String FACEBOOK_APP_SECRET = "******";
+	public static final String FACEBOOK_APP_SECRET = "*******";
 	// O caminho onde será feito o redirect
 	public static final String REDIRECT_TO = "http://localhost:8080/JSF-Facebook/success.faces";
 
 	public String socialConnect() throws Exception {
 		try {
-			// Define o id da sua aplicação e a sua senha
+			// Define o id do seu aplicativo e a sua senha
 			Properties props = System.getProperties();
 			props.put("graph.facebook.com.consumer_key", FACEBOOK_APP_ID);
 			props.put("graph.facebook.com.consumer_secret", FACEBOOK_APP_SECRET);
-			// Define as permissões da sua aplicação
+			// Define as permiss�es da sua aplica��o
 			props.put("graph.facebook.com.custom_permissions",
 					"public_profile,user_education_history,publish_actions,user_managed_groups");
 
