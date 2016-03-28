@@ -34,11 +34,11 @@ public class LoginBean implements Serializable {
 
 	public String socialConnect() throws Exception {
 		try {
-			// Aqui se define o id do seu aplicativo e sua senha
+			// Define o id da sua aplicação e a sua senha
 			Properties props = System.getProperties();
 			props.put("graph.facebook.com.consumer_key", FACEBOOK_APP_ID);
 			props.put("graph.facebook.com.consumer_secret", FACEBOOK_APP_SECRET);
-			// Aqui se define as permissões da sua aplicação
+			// Define as permissões da sua aplicação
 			props.put("graph.facebook.com.custom_permissions",
 					"public_profile,user_education_history,publish_actions,user_managed_groups");
 
