@@ -66,16 +66,18 @@ public class FB0Auth {
 			user.setAge(resp.getJSONObject("age_range").getInt("min"));
 
 			// Pega as escolas do usuario
-			String educationList = resp.get("education").toString();
-			// Exclui os colchetes
-			educationList = educationList.substring(1, educationList.length() - 1);
-			JSONObject instituteFields = new JSONObject(educationList);
+ 			JSONObject instituteFields = resp.getJSONArray("education");
+ 			
 			List<Institute> institutes = new ArrayList<>();
+			for(int i =0;i<instituteFields.length();i++){
+			JSONObject instituteJSON = instituteFields.getJSONObject(i);
 			Institute institute = new Institute();
-			institute.setName(instituteFields.getJSONObject("school").getString("name"));
-			institute.setFinalYearOfCourse(instituteFields.getJSONObject("year").getString("name"));
+			institute.setName(instituteJSON.getString("name"));
+			institute.setFinalYearOfCourse(instituteJSON.getJSONObject("year").getString("name"));
 			institutes.add(institute);
+			}
 			user.setInstiutes(institutes);
+
 
 			return user;
 
