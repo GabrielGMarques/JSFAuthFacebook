@@ -29,7 +29,7 @@ public class LoginBean implements Serializable {
 	public static final String FACEBOOK_APP_ID = "********";
 	// A senha do seu app
 	public static final String FACEBOOK_APP_SECRET = "*******";
-	// O caminho onde será feito o redirect
+	// O caminho onde serÃ¡ feito o redirect
 	public static final String REDIRECT_TO = "http://localhost:8080/JSF-Facebook/success.faces";
 
 	public String socialConnect() throws Exception {
@@ -38,7 +38,7 @@ public class LoginBean implements Serializable {
 			Properties props = System.getProperties();
 			props.put("graph.facebook.com.consumer_key", FACEBOOK_APP_ID);
 			props.put("graph.facebook.com.consumer_secret", FACEBOOK_APP_SECRET);
-			// Define as permiss�es da sua aplica��o
+			// Define as permissões da sua aplicação
 			props.put("graph.facebook.com.custom_permissions",
 					"public_profile,user_education_history,publish_actions,user_managed_groups");
 
@@ -48,10 +48,9 @@ public class LoginBean implements Serializable {
 			manager = new SocialAuthManager();
 			manager.setSocialAuthConfig(config);
 
-			// A pagina será redirecionada para a success.faces onde irei
+			// A pagina serÃ¡ redirecionada para a success.faces onde irei
 			// extrair os dados
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-			String successURL = externalContext.getRequestContextPath() + "/success.xhtml";
 			String authenticationURL = manager.getAuthenticationUrl(providerID,
 					"http://localhost:8080/JSF-Facebook/success.faces");
 			System.out.println(authenticationURL);
