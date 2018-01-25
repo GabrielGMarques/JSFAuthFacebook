@@ -1,4 +1,4 @@
-<h2>JSF-Facebook</h2>
+<h2>JSFAuthFacebook</h2>
 <p>
 This tutorial is about how integrate the Java Server Faces with the Facebook in a way more flexible.
 In this tutorial i used the socialauth API of 3Pillar Labs.<br/>
