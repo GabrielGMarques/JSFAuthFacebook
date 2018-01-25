@@ -1,6 +1,6 @@
 <h2>JSF-Facebook</h2>
 <p>
-Tutorial is about how integrate the Java Server Faces with the Facebook of a way more free.
+This tutorial is about how integrate the Java Server Faces with the Facebook in a way more flexible.
 In this tutorial i used the socialauth API of 3Pillar Labs.<br/>
-To use, you need make the download, put at a container, register the app on facebook, put the id and the password at loginBean attributes.
+First you need download the project and put it in a container, second, register the app on facebook and put both id and the password at loginBean attributes.
 </p>
